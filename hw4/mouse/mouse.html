@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="js/paper.js"></script>
+<script type="text/paperscript" canvas="myCanvas">
+	var myPath = new Path();
+    const colorCycle = [
+        '#ff0000',
+        '#ffa500',
+        '#ffff00',
+        '#008000',
+        '#0000ff',
+        '#4b0082',
+        '#ee82ee'
+    ];
+    var colorPos = 0;
+    myPath.strokeColor = colorCycle[colorPos];
+
+    function onMouseDown(event) {
+        colorPos = (colorPos + 1) % colorCycle.size();
+        myPath.strokeColor = colorCycle[colorPos];
+        myPath.add(event.point);
+    }
+</script>
+</head>
+<body>
+	<canvas id="myCanvas" resize></canvas>
+</body>
+</html>
