@@ -41,12 +41,12 @@ function fetchResults(e) {
     if (endDate.value !== '') {
         url = `${url}&end_date=${endDate.value}`;
     };
-}
 
-fetch(url)
-    .then((response) => response.json())
-    .then((json) => displayResults(json))
-    .catch((error) => console.error(`Error fetching data: ${error.message}`));
+    fetch(url)
+        .then((response) => response.json())
+        .then((json) => displayResults(json))
+        .catch((error) => console.error(`Error fetching data: ${error.message}`));
+}
 
 function displayResults(json) {
     while (section.firstChild) {
