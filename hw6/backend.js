@@ -36,7 +36,6 @@ app.post("/dalle2", async function (request, response) {
         "1024x1024"
     );
     const imgUrl = dalleResponse.data.data[0].url;
-
     response.send(imgUrl);
 });
 
